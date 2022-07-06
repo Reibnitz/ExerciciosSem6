@@ -1,4 +1,4 @@
-﻿using Semana_6.Exceptions;
+﻿using Sem_6_Ex_1.Exceptions;
 
 namespace Sem_6_Ex_1
 {

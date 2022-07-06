@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Semana_6.Exceptions
+namespace Sem_6_Ex_1.Exceptions
 {
     internal class ContaNaoOperacionalException : Exception
     {
