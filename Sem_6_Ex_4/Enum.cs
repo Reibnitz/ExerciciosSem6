@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sem_6_Ex_4
 {
-    public enum Opcoes
+    public enum EOpcao
     {
         ListarProdutos = 1,
         ListarCarrinho,
