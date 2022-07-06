@@ -7,19 +7,7 @@ namespace Sem_6_Ex_3.Models
         public string Nome { get; set; }
         public int NumeroChamada { get; set; }
         public List<IDisciplina> ListaDeDisciplinas{ get; }
-
-        private List<IAvaliacao> _Boletim;
-        public List<IAvaliacao> Boletim { 
-            get
-            {
-                if (_Boletim == null) _Boletim = new List<IAvaliacao>();
-                return _Boletim;
-            }
-            set
-            {
-                _Boletim = value;
-            }
-        }
+        public List<IAvaliacao> Boletim { get; set; } = new List<IAvaliacao>();
 
         public Aluno(string nome, int numeroChamada, List<IDisciplina> listaDeDisciplinas)
         {

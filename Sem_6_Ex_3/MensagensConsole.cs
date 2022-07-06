@@ -39,28 +39,37 @@ namespace Sem_6_Ex_3
             }
         }
 
-        internal static IAvaliacao CriarAvaliacao(IAluno alunoSelecionado)
+        public static IDisciplina SelecionarDisciplina(IAluno alunoSelecionado)
         {
             Console.WriteLine("\n----- Inserir avaliação -----\n");
             ListarDisciplinas(alunoSelecionado);
-
             Console.Write("Selecione a disciplina: ");
+
             bool respostaDisciplina = int.TryParse(Console.ReadLine(), out int disciplinaSelecionada);
             if (!respostaDisciplina)
                 throw new Exception("O valor selecionado é inválido");
-            IDisciplina disciplina = alunoSelecionado.ListaDeDisciplinas[disciplinaSelecionada - 1];
 
+            return alunoSelecionado.ListaDeDisciplinas[disciplinaSelecionada - 1];
+        }
+
+        public static int SelecionarAvaliacao(IDisciplina disciplina)
+        {
             Console.Write($"Selecione o número da avaliação (1 a {disciplina.QuantidadeAvaliacoes}): ");
             bool respostaNumeroAvaliacao = int.TryParse(Console.ReadLine(), out int numeroAvaliacao);
             if (!respostaNumeroAvaliacao)
                 throw new Exception("O valor selecionado é inválido");
 
+            return numeroAvaliacao;
+        }
+
+        public static double SelecionarNota()
+        {
             Console.Write("Digite a nota desejada: ");
             bool respostaNota = double.TryParse(Console.ReadLine(), out double notaSelecionada);
-            if (!respostaNumeroAvaliacao)
+            if (!respostaNota)
                 throw new Exception("O valor selecionado é inválido");
 
-            return Factory.CriarAvaliacao(disciplina, numeroAvaliacao, notaSelecionada);
+            return notaSelecionada;
         }
 
         public static void ListarBoletim(IAluno alunoSelecionado)

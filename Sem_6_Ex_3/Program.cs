@@ -1,25 +1,23 @@
 ﻿using Sem_6_Ex_3;
 using Sem_6_Ex_3.Interfaces;
 
+List<IDisciplina> listaDeDisciplinas = new List<IDisciplina>()
+{
+    Factory.CriarDisciplina("HTML/CSS", 2),
+    Factory.CriarDisciplina("Javascript", 2),
+    Factory.CriarDisciplina("C#", 2)
+};
+
+List<IAluno> listaDeAlunos = new List<IAluno>()
+{
+    Factory.CriarAluno("Eduardo", 1, listaDeDisciplinas),
+    Factory.CriarAluno("Lucas", 2, listaDeDisciplinas),
+    Factory.CriarAluno("Matheus", 3, listaDeDisciplinas),
+    Factory.CriarAluno("Paulo Henrique", 4, listaDeDisciplinas)
+};
+
 while (true)
 {
-    List<IDisciplina> listaDeDisciplinas = new List<IDisciplina>()
-    {
-        Factory.CriarDisciplina("HTML/CSS", 2),
-        Factory.CriarDisciplina("Javascript", 2),
-        Factory.CriarDisciplina("C#", 2)
-    };
-
-    IAluno eduardo = Factory.CriarAluno("Eduardo", 1, listaDeDisciplinas);
-    IAluno lucas = Factory.CriarAluno("Lucas", 2, listaDeDisciplinas);
-    IAluno matheus = Factory.CriarAluno("Matheus", 3, listaDeDisciplinas);
-    IAluno paulo = Factory.CriarAluno("Paulo Henrique", 4, listaDeDisciplinas);
-
-    List<IAluno> listaDeAlunos = new List<IAluno>()
-    {
-        eduardo, lucas, matheus, paulo
-    };
-
     MensagensConsole.ListarAlunos(listaDeAlunos);
     int numeroAluno = MensagensConsole.SelecionarAluno(listaDeAlunos);
     IAluno alunoSelecionado = listaDeAlunos[numeroAluno];
@@ -34,7 +32,11 @@ while (true)
             MensagensConsole.ListarDisciplinas(alunoSelecionado);
             break;
         case EOperacao.InserirAvaliacao:
-            IAvaliacao avaliacao = MensagensConsole.CriarAvaliacao(alunoSelecionado);
+            IDisciplina disciplina = MensagensConsole.SelecionarDisciplina(alunoSelecionado);
+            int numeroAvaliacao = MensagensConsole.SelecionarAvaliacao(disciplina);
+            double nota = MensagensConsole.SelecionarNota();
+
+            IAvaliacao avaliacao = Factory.CriarAvaliacao(disciplina, numeroAvaliacao, nota);
             alunoSelecionado.AdicionarAvaliacao(avaliacao);
             break;
         default:
