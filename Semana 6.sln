@@ -5,9 +5,11 @@ VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sem_6_Ex_1", "Semana 6\Sem_6_Ex_1.csproj", "{F851DB54-39A0-485E-A9D2-1E413F01825A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sem_6_Ex_2", "Sem_6_Ex_2\Sem_6_Ex_2.csproj", "{0CA5529D-DB01-4C21-B045-622859EF4A6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sem_6_Ex_2", "Sem_6_Ex_2\Sem_6_Ex_2.csproj", "{0CA5529D-DB01-4C21-B045-622859EF4A6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sem_6_Ex_3", "Sem_6_Ex_3\Sem_6_Ex_3.csproj", "{E15E5856-5F4C-4B84-9FE4-8EB6D7A7B727}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sem_6_Ex_3", "Sem_6_Ex_3\Sem_6_Ex_3.csproj", "{E15E5856-5F4C-4B84-9FE4-8EB6D7A7B727}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sem_6_Ex_4", "Sem_6_Ex_4\Sem_6_Ex_4.csproj", "{A3427777-A047-4763-B5FE-67456C5A9AEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{E15E5856-5F4C-4B84-9FE4-8EB6D7A7B727}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E15E5856-5F4C-4B84-9FE4-8EB6D7A7B727}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E15E5856-5F4C-4B84-9FE4-8EB6D7A7B727}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3427777-A047-4763-B5FE-67456C5A9AEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3427777-A047-4763-B5FE-67456C5A9AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3427777-A047-4763-B5FE-67456C5A9AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3427777-A047-4763-B5FE-67456C5A9AEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
