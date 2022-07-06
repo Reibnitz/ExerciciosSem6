@@ -1,4 +1,5 @@
-﻿using Sem_6_Ex_4.Interfaces;
+﻿using Sem_6_Ex_4.Exceptions;
+using Sem_6_Ex_4.Interfaces;
 
 namespace Sem_6_Ex_4.Models
 {
@@ -17,7 +18,7 @@ namespace Sem_6_Ex_4.Models
         public void RemoverProduto(IProduto produto)
         {
             if (!Produtos.Contains(produto))
-                throw new Exception();
+                throw new ProdutoInvalidoException(produto);
 
             int index = Produtos.IndexOf(produto);
 
@@ -36,7 +37,7 @@ namespace Sem_6_Ex_4.Models
                 valor += Produtos[i].Valor * Quantidade[i];
             }
 
-            lista += $"\nTotal: {valor}";
+            lista += $"\nTotal: R$ {valor}";
 
             return lista;
         }

@@ -17,28 +17,36 @@ ICarrinho carrinho = Factory.CriarCarrinho();
 
 Console.WriteLine("----- Ex 4 - Abstração carrinho de compras -----");
 
+
 while (true)
 {
-    EOpcao opcaoEscolhida = MensagensConsole.ListarOpcoes();
-
-    switch (opcaoEscolhida)
+    try
     {
-        case EOpcao.ListarProdutos:
-            MensagensConsole.ListarProdutos(listaEstoque);
-            break;
-        case EOpcao.ListarCarrinho:
-            MensagensConsole.ListarCarrinho(carrinho);
-            break;
-        case EOpcao.AdicionarAoCarrinho:
-            IProduto produtoAdd = MensagensConsole.EscolherProduto(listaEstoque);
-            int quantidade = MensagensConsole.EscolherQuantidade();
-            carrinho.AdicionarProduto(produtoAdd, quantidade);
-            break;
-        case EOpcao.RemoverDoCarrinho:
-            IProduto produtoRemove = MensagensConsole.EscolherProduto(carrinho.Produtos);
-            carrinho.RemoverProduto(produtoRemove);
-            break;
-        default:
-            break;
+        EOpcao opcaoEscolhida = MensagensConsole.ListarOpcoes();
+
+        switch (opcaoEscolhida)
+        {
+            case EOpcao.ListarProdutos:
+                MensagensConsole.ListarProdutos(listaEstoque);
+                break;
+            case EOpcao.ListarCarrinho:
+                MensagensConsole.ListarCarrinho(carrinho);
+                break;
+            case EOpcao.AdicionarAoCarrinho:
+                IProduto produtoAdd = MensagensConsole.EscolherProduto(listaEstoque);
+                int quantidade = MensagensConsole.EscolherQuantidade();
+                carrinho.AdicionarProduto(produtoAdd, quantidade);
+                break;
+            case EOpcao.RemoverDoCarrinho:
+                IProduto produtoRemove = MensagensConsole.EscolherProduto(carrinho.Produtos);
+                carrinho.RemoverProduto(produtoRemove);
+                break;
+            default:
+                break;
+        }
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine(e.Message);
     }
 }

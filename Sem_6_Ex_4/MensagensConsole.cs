@@ -1,4 +1,5 @@
-﻿using Sem_6_Ex_4.Interfaces;
+﻿using Sem_6_Ex_4.Exceptions;
+using Sem_6_Ex_4.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace Sem_6_Ex_4
 
             bool escolha = int.TryParse(Console.ReadLine(), out int opcaoEscolhida);
             if (!escolha || opcaoEscolhida > 4 || opcaoEscolhida < 1)
-                throw new Exception();
+                throw new OpcaoInvalidaException();
 
             return (EOpcao)opcaoEscolhida;
         }
@@ -43,7 +44,7 @@ namespace Sem_6_Ex_4
 
             bool escolha = int.TryParse(Console.ReadLine(), out int opcaoEscolhida);
             if (!escolha)
-                throw new Exception();
+                throw new OpcaoInvalidaException();
 
             return opcaoEscolhida;
         }
@@ -53,8 +54,10 @@ namespace Sem_6_Ex_4
             Console.Write("\nDigite o código do produto: ");
 
             bool escolha = int.TryParse(Console.ReadLine(), out int opcaoEscolhida);
-            if (!escolha || opcaoEscolhida > lista.Count)
-                throw new Exception();
+            if (!escolha)
+                throw new OpcaoInvalidaException();
+            if (opcaoEscolhida > lista.Count)
+                throw new ProdutoInvalidoException();
 
             return lista[opcaoEscolhida - 1];
         }
@@ -62,7 +65,7 @@ namespace Sem_6_Ex_4
         internal static void ListarCarrinho(ICarrinho carrinho)
         {
             if (carrinho.Produtos.Count == 0)
-                throw new Exception();
+                throw new CarrinhoVazioException();
 
             Console.WriteLine("\n---- Carrinho de compras -----");
             string mensagem = carrinho.Listar();
