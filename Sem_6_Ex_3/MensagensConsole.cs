@@ -28,9 +28,10 @@ namespace Sem_6_Ex_3
             return alunoSelecionado - 1;
         }
 
-        internal static void ListarDisciplinas(IAluno alunoSelecionado)
+        internal static void ListarDisciplinas(IAluno alunoSelecionado, bool chamadaInterna = false)
         {
-            Console.WriteLine("\n----- Lista de disciplinas matriculadas -----\n");
+            if (!chamadaInterna)
+                Console.WriteLine("\n----- Lista de disciplinas matriculadas -----\n");
             int i = 1;
             foreach (var d in alunoSelecionado.ListaDeDisciplinas)
             {
@@ -42,7 +43,7 @@ namespace Sem_6_Ex_3
         public static IDisciplina SelecionarDisciplina(IAluno alunoSelecionado)
         {
             Console.WriteLine("\n----- Inserir avaliação -----\n");
-            ListarDisciplinas(alunoSelecionado);
+            ListarDisciplinas(alunoSelecionado, chamadaInterna: true);
             Console.Write("Selecione a disciplina: ");
 
             bool respostaDisciplina = int.TryParse(Console.ReadLine(), out int disciplinaSelecionada);
@@ -74,24 +75,33 @@ namespace Sem_6_Ex_3
 
         public static void ListarBoletim(IAluno alunoSelecionado)
         {
-            Console.WriteLine(alunoSelecionado.Boletim);
-            //foreach (var d in alunoSelecionado.ListaDeDisciplinas)
-            //{
-            //    Console.WriteLine($"\nDisciplina: {d.Nome}");
-            //    Console.Write("Notas provas: ");
+            foreach (var d in alunoSelecionado.ListaDeDisciplinas)
+            {
+                Console.WriteLine($"\nDisciplina: {d.Nome}");
 
-            //    IEnumerable<IAvaliacao> avaliacoes = alunoSelecionado.Boletim.Where(b => b.Disciplina.Nome == d.Nome);
+                IEnumerable<IAvaliacao> avaliacoes = alunoSelecionado.Boletim.Where(b => b.Disciplina.Nome == d.Nome);
 
-            //    double soma = 0;
-            //    foreach (var a in avaliacoes)
-            //    {
-            //        Console.Write($"{a.Nota}, ");
-            //        soma += a.Nota;
-            //    }
+                if (avaliacoes.Count() == 0)
+                {
+                    Console.WriteLine("Nenhuma prova foi realizada nessa disciplina até o momento");
+                }
+                else
+                {
+                    Console.Write("Notas provas: ");
+                    double soma = 0;
+                    foreach (var a in avaliacoes)
+                    {
+                        if (avaliacoes.ElementAt(avaliacoes.Count() - 1) == a)
+                            Console.Write($"{a.Nota}");
+                        else
+                            Console.Write($"{a.Nota}, ");
 
-            //    Console.WriteLine($"Média: {soma / avaliacoes.Count()}");
+                        soma += a.Nota;
+                    }
 
-            //}
+                    Console.WriteLine($"\nMédia: {soma / avaliacoes.Count()}");
+                }
+            }
         }
 
         public static EOperacao SelecionarOpcao()
