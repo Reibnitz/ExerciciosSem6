@@ -1,9 +1,5 @@
 ﻿using Sem_6_Ex_4.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Sem_6_Ex_4.Models;
 
 namespace Sem_6_Ex_4
 {
