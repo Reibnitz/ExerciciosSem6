@@ -1,9 +1,5 @@
-﻿using Sem_6_Ex_3.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Sem_6_Ex_3.Exceptions;
+using Sem_6_Ex_3.Interfaces;
 
 namespace Sem_6_Ex_3
 {
@@ -22,7 +18,7 @@ namespace Sem_6_Ex_3
         {
             Console.Write("\nSelecione um aluno: ");
             bool resposta = int.TryParse(Console.ReadLine(), out int alunoSelecionado);
-            if (!resposta) throw new Exception("O valor selecionado é inválido");
+            if (!resposta) throw new OpcaoInvalidaException();
             if (alunoSelecionado > listaDeAlunos.Count) throw new Exception($"Aluno {alunoSelecionado} não existe");
 
             return alunoSelecionado - 1;
@@ -48,7 +44,7 @@ namespace Sem_6_Ex_3
 
             bool respostaDisciplina = int.TryParse(Console.ReadLine(), out int disciplinaSelecionada);
             if (!respostaDisciplina)
-                throw new Exception("O valor selecionado é inválido");
+                throw new OpcaoInvalidaException();
 
             return alunoSelecionado.ListaDeDisciplinas[disciplinaSelecionada - 1];
         }
@@ -58,7 +54,7 @@ namespace Sem_6_Ex_3
             Console.Write($"Selecione o número da avaliação (1 a {disciplina.QuantidadeAvaliacoes}): ");
             bool respostaNumeroAvaliacao = int.TryParse(Console.ReadLine(), out int numeroAvaliacao);
             if (!respostaNumeroAvaliacao)
-                throw new Exception("O valor selecionado é inválido");
+                throw new OpcaoInvalidaException();
 
             return numeroAvaliacao;
         }
@@ -68,13 +64,16 @@ namespace Sem_6_Ex_3
             Console.Write("Digite a nota desejada: ");
             bool respostaNota = double.TryParse(Console.ReadLine(), out double notaSelecionada);
             if (!respostaNota)
-                throw new Exception("O valor selecionado é inválido");
+                throw new OpcaoInvalidaException();
 
             return notaSelecionada;
         }
 
         public static void ListarBoletim(IAluno alunoSelecionado)
         {
+            if (alunoSelecionado.Boletim.Count() == 0)
+                throw new ListaDisciplinaVaziaException(alunoSelecionado);
+
             foreach (var d in alunoSelecionado.ListaDeDisciplinas)
             {
                 Console.WriteLine($"\nDisciplina: {d.Nome}");
@@ -113,7 +112,7 @@ namespace Sem_6_Ex_3
 
             Console.Write("\nSelecione a operação desejada: ");
             bool resposta = int.TryParse(Console.ReadLine(), out int opcaoSelecionada);
-            if (!resposta || opcaoSelecionada > 3) throw new Exception($"A opção número {opcaoSelecionada} é inválida");
+            if (!resposta || opcaoSelecionada > 3) throw new OpcaoInvalidaException();
 
             return (EOperacao)opcaoSelecionada;
         }

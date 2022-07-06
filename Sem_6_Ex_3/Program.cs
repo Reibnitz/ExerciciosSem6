@@ -18,28 +18,35 @@ List<IAluno> listaDeAlunos = new List<IAluno>()
 
 while (true)
 {
-    MensagensConsole.ListarAlunos(listaDeAlunos);
-    int numeroAluno = MensagensConsole.SelecionarAluno(listaDeAlunos);
-    IAluno alunoSelecionado = listaDeAlunos[numeroAluno];
-    EOperacao operacaoSelecionada = MensagensConsole.SelecionarOpcao();
-
-    switch (operacaoSelecionada)
+    try
     {
-        case EOperacao.ListarBoletim:
-            MensagensConsole.ListarBoletim(alunoSelecionado);
-            break;
-        case EOperacao.ListarDisciplinas:
-            MensagensConsole.ListarDisciplinas(alunoSelecionado);
-            break;
-        case EOperacao.InserirAvaliacao:
-            IDisciplina disciplina = MensagensConsole.SelecionarDisciplina(alunoSelecionado);
-            int numeroAvaliacao = MensagensConsole.SelecionarAvaliacao(disciplina);
-            double nota = MensagensConsole.SelecionarNota();
+        MensagensConsole.ListarAlunos(listaDeAlunos);
+        int numeroAluno = MensagensConsole.SelecionarAluno(listaDeAlunos);
+        IAluno alunoSelecionado = listaDeAlunos[numeroAluno];
+        EOperacao operacaoSelecionada = MensagensConsole.SelecionarOpcao();
 
-            IAvaliacao avaliacao = Factory.CriarAvaliacao(disciplina, numeroAvaliacao, nota);
-            alunoSelecionado.AdicionarAvaliacao(avaliacao);
-            break;
-        default:
-            break;
+        switch (operacaoSelecionada)
+        {
+            case EOperacao.ListarBoletim:
+                MensagensConsole.ListarBoletim(alunoSelecionado);
+                break;
+            case EOperacao.ListarDisciplinas:
+                MensagensConsole.ListarDisciplinas(alunoSelecionado);
+                break;
+            case EOperacao.InserirAvaliacao:
+                IDisciplina disciplina = MensagensConsole.SelecionarDisciplina(alunoSelecionado);
+                int numeroAvaliacao = MensagensConsole.SelecionarAvaliacao(disciplina);
+                double nota = MensagensConsole.SelecionarNota();
+
+                IAvaliacao avaliacao = Factory.CriarAvaliacao(disciplina, numeroAvaliacao, nota);
+                alunoSelecionado.AdicionarAvaliacao(avaliacao);
+                break;
+            default:
+                break;
+        }
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine(e.Message);
     }
 }
