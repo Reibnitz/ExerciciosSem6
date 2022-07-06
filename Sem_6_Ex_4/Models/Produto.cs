@@ -1,4 +1,6 @@
-﻿namespace Sem_6_Ex_4.Models
+﻿using Sem_6_Ex_4.Interfaces;
+
+namespace Sem_6_Ex_4.Models
 {
     public class Produto : IProduto
     {
