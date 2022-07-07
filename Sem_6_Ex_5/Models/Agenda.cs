@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Sem_6_Ex_5
 {
-    public class Agenda
+    public class Agenda : IAgenda
     {
-        private CompromissoService _compromissoService;
+        private ICompromissoService _compromissoService;
         private List<ICompromisso> Compromissos { get; set; } = new List<ICompromisso>();
 
-        public Agenda()
+        public Agenda(ICompromissoService compromissoService)
         {
-            _compromissoService = new CompromissoService();
+            _compromissoService = compromissoService;
         }
 
         public void CriarCompromisso(string nome, string descricao, DateOnly data, TimeOnly horario, TimeSpan duracao)

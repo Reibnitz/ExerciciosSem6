@@ -1,7 +1,7 @@
 ﻿using Sem_6_Ex_5;
 
 Console.WriteLine("Exercício 5 - Abstração Agenda de compromissos");
-Agenda agenda = new();
+IAgenda agenda = Factory.CriarAgenda();
 bool continuar = true;
 
 while (continuar)

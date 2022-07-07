@@ -20,7 +20,7 @@
             return (Operacao)operacaoEscolhida;
         }
 
-        public static void CriarCompromisso(Agenda agenda)
+        public static void CriarCompromisso(IAgenda agenda)
         {
             string nome = DefinirNomeCompromisso();
             string descricao = DefinirDescricaoCompromisso();

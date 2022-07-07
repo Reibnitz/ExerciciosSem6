@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Sem_6_Ex_5
 {
-    public class CompromissoService
+    public class CompromissoService : ICompromissoService
     {
         public ICompromisso CriarCompromisso(string nome, string descricao, DateOnly data, TimeOnly horario, TimeSpan duracao)
         {
-            Compromisso compromisso = new(nome, descricao, data, horario, duracao);
-            return compromisso;
+            return Factory.CriarCompromisso(nome, descricao, data, horario, duracao);
         }
 
         public List<ICompromisso> MostrarProximosCompromissosDoDia(List<ICompromisso> compromissos)
