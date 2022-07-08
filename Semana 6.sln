@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sem_6_Ex_4", "Sem_6_Ex_4\Se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sem_6_Ex_5", "Sem_6_Ex_5\Sem_6_Ex_5.csproj", "{B3A8A03B-FAC1-4DB8-A71F-2855A96E51B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sem_6_Ex_6", "Sem_6_Ex_6\Sem_6_Ex_6.csproj", "{01993A53-7382-4F5B-AA03-0C92B72D841D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sem_6_Ex_7", "Sem_6_Ex_6\Sem_6_Ex_7.csproj", "{01993A53-7382-4F5B-AA03-0C92B72D841D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

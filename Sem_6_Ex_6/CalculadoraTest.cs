@@ -2,7 +2,7 @@
 using Sem_6_Ex_2.Exceptions;
 using Xunit;
 
-namespace Sem_6_Ex_6
+namespace Sem_6_Ex_7
 {
     public class CalculadoraTest
     {
