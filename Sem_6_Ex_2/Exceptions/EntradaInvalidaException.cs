@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Sem_6_Ex_2.Exceptions
 {
-    internal class EntradaNulaException : Exception
+    public class EntradaInvalidaException : Exception
     {
         private const string Mensagem = "Valor inválido\n";
 
-        public EntradaNulaException() : base(Mensagem)
+        public EntradaInvalidaException() : base(Mensagem)
         {
 
         }

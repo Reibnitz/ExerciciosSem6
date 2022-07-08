@@ -2,6 +2,7 @@
 
 while (true)
 {
+    MensagensConsole.ExibirOperacoes();
     try
     {
         ECalculadora operacaoEscolhida = (ECalculadora)MensagensConsole.EscolherOperacao();

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Sem_6_Ex_2.Exceptions
 {
-    internal class OpcaoInvalidaException : Exception
+    public class OpcaoNaoExistenteException : Exception
     {
         private const string Mensagem = "A opção selecionada é inválida\n";
 
-        public OpcaoInvalidaException() : base (Mensagem)
+        public OpcaoNaoExistenteException() : base (Mensagem)
         {
 
         }
