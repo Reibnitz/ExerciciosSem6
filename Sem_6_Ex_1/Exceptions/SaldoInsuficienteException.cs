@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sem_6_Ex_1.Exceptions
 {
-    internal class SaldoInsuficienteException : Exception
+    public class SaldoInsuficienteException : Exception
     {
         private const string Mensagem = "A conta {0} possui saldo insuficiente para realizar esta operação";
 

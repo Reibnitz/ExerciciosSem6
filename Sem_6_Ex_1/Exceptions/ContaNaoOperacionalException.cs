@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sem_6_Ex_1.Exceptions
 {
-    internal class ContaNaoOperacionalException : Exception
+    public class ContaNaoOperacionalException : Exception
     {
         private const string Mensagem = "A conta {0} não está em estado operacional";
 

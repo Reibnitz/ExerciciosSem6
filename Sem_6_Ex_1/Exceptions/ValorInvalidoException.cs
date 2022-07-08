@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sem_6_Ex_1.Exceptions
 {
-    internal class ValorInvalidoException : Exception
+    public class ValorInvalidoException : Exception
     {
         private const string Mensagem = "Só é possível realizar operações com valores maiores que zero";
 

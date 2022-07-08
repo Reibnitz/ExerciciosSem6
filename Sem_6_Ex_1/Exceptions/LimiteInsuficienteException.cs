@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sem_6_Ex_1.Exceptions
 {
-    internal class LimiteInsuficienteException : Exception
+    public class LimiteInsuficienteException : Exception
     {
         private const string Mensagem = "A conta {0} possui limite de saque insuficiente para realizar esta operação";
 
