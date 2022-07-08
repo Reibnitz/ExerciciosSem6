@@ -29,7 +29,7 @@ namespace Sem_6_Ex_1
             if (valor > Saldo)
                 throw new SaldoInsuficienteException(Numero);
 
-            if (valor >= LimiteDeSaque)
+            if (valor > LimiteDeSaque)
                 throw new LimiteInsuficienteException(Numero);
 
             if (valor <= 0 )
@@ -42,13 +42,13 @@ namespace Sem_6_Ex_1
         public void Depositar(decimal valor)
         {
             VerificarOperacionalidade();
-            if (valor < 0) throw new ValorInvalidoException();
+            if (valor <= 0) throw new ValorInvalidoException();
 
             Saldo += valor;
             MostrarSaldo();
         }
 
-        private bool VerificarOperacionalidade()
+        public bool VerificarOperacionalidade()
         {
             if (!EhOperacional) throw new ContaNaoOperacionalException(Numero);
 
