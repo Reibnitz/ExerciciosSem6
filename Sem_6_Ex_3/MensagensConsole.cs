@@ -19,7 +19,7 @@ namespace Sem_6_Ex_3
             Console.Write("\nSelecione um aluno: ");
             bool resposta = int.TryParse(Console.ReadLine(), out int alunoSelecionado);
             if (!resposta) throw new OpcaoInvalidaException();
-            if (alunoSelecionado > listaDeAlunos.Count) throw new Exception($"Aluno {alunoSelecionado} não existe");
+            if (alunoSelecionado > listaDeAlunos.Count) throw new OpcaoInvalidaException($"Aluno {alunoSelecionado} não existe");
 
             return alunoSelecionado - 1;
         }

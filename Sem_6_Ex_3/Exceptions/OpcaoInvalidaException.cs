@@ -14,5 +14,10 @@ namespace Sem_6_Ex_3.Exceptions
         {
 
         }
+
+        public OpcaoInvalidaException(string mensagem) : base(mensagem)
+        {
+
+        }
     }
 }
