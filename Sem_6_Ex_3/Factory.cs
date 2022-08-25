@@ -18,8 +18,11 @@ namespace Sem_6_Ex_3
 
         public static IAvaliacao CriarAvaliacao(IDisciplina disciplina, int numeroAvaliacao, double nota)
         {
-            if (numeroAvaliacao > disciplina.QuantidadeAvaliacoes) throw new AvaliacaoInvalidaException(numeroAvaliacao, disciplina.QuantidadeAvaliacoes);
-            if (nota > 10 || nota < 0) throw new NotaInvalidaException(nota);
+            if (numeroAvaliacao > disciplina.QuantidadeAvaliacoes || numeroAvaliacao < 1)
+                throw new AvaliacaoInvalidaException(numeroAvaliacao, disciplina.QuantidadeAvaliacoes);
+
+            if (nota > 10 || nota < 0)
+                throw new NotaInvalidaException(nota);
 
             return new Avaliacao(disciplina, numeroAvaliacao, nota);
         }

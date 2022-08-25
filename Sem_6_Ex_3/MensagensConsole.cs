@@ -17,11 +17,18 @@ namespace Sem_6_Ex_3
         public static int SelecionarAluno(List<IAluno> listaDeAlunos)
         {
             Console.Write("\nSelecione um aluno: ");
-            bool resposta = int.TryParse(Console.ReadLine(), out int alunoSelecionado);
-            if (!resposta) throw new OpcaoInvalidaException();
-            if (alunoSelecionado > listaDeAlunos.Count) throw new OpcaoInvalidaException($"Aluno {alunoSelecionado} não existe");
+            int alunoSelecionado = ProcessarSelecaoAluno(Console.ReadLine(), listaDeAlunos.Count);
 
             return alunoSelecionado - 1;
+        }
+
+        public static int ProcessarSelecaoAluno(string inputUsuario, int numeroDeAlunos)
+        {
+            bool resposta = int.TryParse(inputUsuario, out int alunoSelecionado);
+            if (!resposta) throw new OpcaoInvalidaException();
+            if (alunoSelecionado > numeroDeAlunos) throw new OpcaoInvalidaException($"Aluno {alunoSelecionado} não existe");
+
+            return alunoSelecionado;
         }
 
         internal static void ListarDisciplinas(IAluno alunoSelecionado, bool chamadaInterna = false)
