@@ -58,7 +58,7 @@ namespace Sem_6_Ex_6
                 ehOperacional: true
             );
 
-            decimal esperado = 100;
+            decimal esperado = 1100;
 
             conta.Depositar(100);
             decimal obtido = conta.Saldo;
