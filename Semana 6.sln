@@ -15,9 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sem_6_Ex_1", "Sem_6_Ex_1\Se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sem_6_Ex_7", "Sem_6_Ex_7\Sem_6_Ex_7.csproj", "{8F8F8512-67F6-4ABC-A847-5A35C8ADF815}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sem_6_Ex_6", "Sem_6_Ex_6\Sem_6_Ex_6.csproj", "{BD0D594D-CDED-474E-B668-949F4BDEB85F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sem_6_Ex_6", "Sem_6_Ex_6\Sem_6_Ex_6.csproj", "{BD0D594D-CDED-474E-B668-949F4BDEB85F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sem_6_Ex_8", "Sem_6_Ex_8\Sem_6_Ex_8.csproj", "{6E60DD82-E3F8-45DE-8179-12407F645B43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sem_6_Ex_8", "Sem_6_Ex_8\Sem_6_Ex_8.csproj", "{6E60DD82-E3F8-45DE-8179-12407F645B43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sem_6_Ex_9", "Sem_6_Ex_9\Sem_6_Ex_9.csproj", "{BB44ACB1-028B-4AAF-BCC4-EB04EDAB6A34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{6E60DD82-E3F8-45DE-8179-12407F645B43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E60DD82-E3F8-45DE-8179-12407F645B43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E60DD82-E3F8-45DE-8179-12407F645B43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB44ACB1-028B-4AAF-BCC4-EB04EDAB6A34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB44ACB1-028B-4AAF-BCC4-EB04EDAB6A34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB44ACB1-028B-4AAF-BCC4-EB04EDAB6A34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB44ACB1-028B-4AAF-BCC4-EB04EDAB6A34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
