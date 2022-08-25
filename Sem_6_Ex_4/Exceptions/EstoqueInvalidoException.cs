@@ -8,7 +8,7 @@ namespace Sem_6_Ex_4.Exceptions
 {
     public class EstoqueInvalidoException : Exception
     {
-        private const string Mensagem = "ERRO - Estoque não pode ser negativo";
+        private const string Mensagem = "ERRO - Estoque deve ser positivo";
 
         public EstoqueInvalidoException() : base(Mensagem)
         {
