@@ -59,9 +59,6 @@ namespace Sem_6_Ex_4
 
         internal static void ListarCarrinho(ICarrinho carrinho)
         {
-            if (carrinho.Produtos.Count == 0)
-                throw new CarrinhoVazioException();
-
             Console.WriteLine("\n---- Carrinho de compras -----");
             string mensagem = carrinho.Listar();
             Console.WriteLine(mensagem);

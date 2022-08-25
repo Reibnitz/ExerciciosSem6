@@ -1,4 +1,5 @@
-﻿using Sem_6_Ex_4.Interfaces;
+﻿using Sem_6_Ex_4.Exceptions;
+using Sem_6_Ex_4.Interfaces;
 
 namespace Sem_6_Ex_4.Models
 {
@@ -18,9 +19,9 @@ namespace Sem_6_Ex_4.Models
         public void RetirarEstoque(int quantidade)
         {
             if (quantidade > Estoque)
-                throw new Exception();
-            if (quantidade < 0)
-                throw new Exception();
+                throw new EstoqueInvalidoException("ERRO - Quantidade excede o estoque");
+            if (quantidade <= 0)
+                throw new ValorInvalidoException("ERRO - Quantidade deve ser maior que zero");
 
             Estoque -= quantidade;
         }

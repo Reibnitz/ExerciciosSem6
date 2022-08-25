@@ -3,7 +3,7 @@
 namespace Sem_6_Ex_4.Exceptions
 {
     [Serializable]
-    internal class ProdutoInvalidoException : Exception
+    public class ProdutoInvalidoException : Exception
     {
         private const string Mensagem = "ERRO - O produto {0} não se encontra no carrinho";
 

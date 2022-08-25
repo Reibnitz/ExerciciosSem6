@@ -28,6 +28,9 @@ namespace Sem_6_Ex_4.Models
 
         public string Listar()
         {
+            if (Produtos.Count == 0)
+                throw new CarrinhoVazioException();
+
             double valor = 0;
             string lista = "Itens carrinho:";
 
