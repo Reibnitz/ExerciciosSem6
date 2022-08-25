@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sem_6_Ex_5.Exceptions
 {
-    internal class HorarioInvalidoException : Exception
+    public class HorarioInvalidoException : Exception
     {
         private const string Mensagem = "ERRO: Horário inválido";
 

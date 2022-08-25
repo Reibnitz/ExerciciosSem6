@@ -62,11 +62,19 @@ namespace Sem_6_Ex_5
             if (!respostaMinutos)
                 throw new OpcaoInvalidaException();
 
-            bool duracaoValida = TimeSpan.TryParse($"{duracaoHoras}:{duracaoMinutos}", out TimeSpan duracao);
-            if (!duracaoValida)
+
+            TimeSpan duracao = GerarDuracao(duracaoHoras, duracaoMinutos);
+
+            return duracao;
+        }
+
+        public static TimeSpan GerarDuracao(int horas, int minutos)
+        {
+            bool duracaoValida = TimeSpan.TryParse($"{horas}:{minutos}", out TimeSpan duracao);
+            if (!duracaoValida || horas < 0)
                 throw new DuracaoInvalidaException();
 
-            if ((duracaoHoras == 4 && duracaoMinutos > 0) || duracaoHoras > 4)
+            if ((horas == 4 && minutos > 0) || horas > 4)
                 throw new DuracaoInvalidaException(duracao);
 
             return duracao;
@@ -84,6 +92,13 @@ namespace Sem_6_Ex_5
             if (!respostaMinutos)
                 throw new OpcaoInvalidaException();
 
+            TimeOnly horario = GerarHorario(hora, minuto);
+
+            return horario;
+        }
+
+        public static TimeOnly GerarHorario(int hora, int minuto)
+        {
             bool horarioValido = TimeOnly.TryParse($"{hora}:{minuto}", out TimeOnly horario);
             if (!horarioValido)
                 throw new HorarioInvalidoException();
@@ -91,7 +106,7 @@ namespace Sem_6_Ex_5
             return horario;
         }
 
-        private static DateOnly DefinirDataCompromisso()
+        public static DateOnly DefinirDataCompromisso()
         {
             Console.Write("Dia: ");
             bool respostaDia = int.TryParse(Console.ReadLine(), out int dia);
@@ -106,9 +121,16 @@ namespace Sem_6_Ex_5
             if (!respostaAno)
                 throw new OpcaoInvalidaException();
 
+            DateOnly data = GerarData(ano, mes, dia);
+
+            return data;
+        }
+
+        public static DateOnly GerarData(int ano, int mes, int dia)
+        {
             bool dataValida = DateOnly.TryParse($"{ano}-{mes}-{dia}", out DateOnly data);
             if (!dataValida)
-                throw new DataInvalidaException();  
+                throw new DataInvalidaException();
 
             return data;
         }
