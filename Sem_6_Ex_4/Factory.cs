@@ -8,8 +8,8 @@ namespace Sem_6_Ex_4
     {
         public static IProduto CriarProduto(string nome, double valor, int estoque)
         {
-            if (valor <= 0) throw new ValorInvalidoException();
-            if (estoque <= 0) throw new EstoqueInvalidoException();
+            if (valor <= 0) throw new ValorInvalidoException("ERRO - Valor deve ser positivo");
+            if (estoque <= 0) throw new EstoqueInvalidoException("ERRO - Estoque deve ser positivo");
 
             return new Produto(nome, valor, estoque);
         }
