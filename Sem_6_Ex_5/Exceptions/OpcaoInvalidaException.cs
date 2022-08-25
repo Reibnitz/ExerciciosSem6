@@ -2,7 +2,7 @@
 
 namespace Sem_6_Ex_5
 {
-    internal class OpcaoInvalidaException : Exception
+    public class OpcaoInvalidaException : Exception
     {
         private const string Mensagem = "ERRO: O usuário inseriu um dado inválido\n";
 

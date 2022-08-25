@@ -2,7 +2,7 @@
 
 namespace Sem_6_Ex_5
 {
-    internal class DiaSemMaisAtividadesException : Exception
+    public class DiaSemMaisAtividadesException : Exception
     {
         private const string Mensagem = "ERRO: Não existem mais atividades marcadas para hoje\n";
 

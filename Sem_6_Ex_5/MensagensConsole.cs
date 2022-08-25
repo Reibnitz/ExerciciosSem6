@@ -1,4 +1,7 @@
-﻿namespace Sem_6_Ex_5
+﻿using Sem_6_Ex_5.Exceptions;
+using System.Security.Cryptography;
+
+namespace Sem_6_Ex_5
 {
     public class MensagensConsole
     {
@@ -59,7 +62,9 @@
             if (!respostaMinutos)
                 throw new OpcaoInvalidaException();
 
-            TimeSpan duracao = new(duracaoHoras, duracaoMinutos, 0);
+            bool duracaoValida = TimeSpan.TryParse($"{duracaoHoras}:{duracaoMinutos}", out TimeSpan duracao);
+            if (!duracaoValida)
+                throw new DuracaoInvalidaException();
 
             if ((duracaoHoras == 4 && duracaoMinutos > 0) || duracaoHoras > 4)
                 throw new DuracaoInvalidaException(duracao);
@@ -79,7 +84,10 @@
             if (!respostaMinutos)
                 throw new OpcaoInvalidaException();
 
-            TimeOnly horario = new(hora, minuto);
+            bool horarioValido = TimeOnly.TryParse($"{hora}:{minuto}", out TimeOnly horario);
+            if (!horarioValido)
+                throw new HorarioInvalidoException();
+
             return horario;
         }
 
@@ -98,7 +106,10 @@
             if (!respostaAno)
                 throw new OpcaoInvalidaException();
 
-            DateOnly data = new(ano, mes, dia);
+            bool dataValida = DateOnly.TryParse($"{ano}-{mes}-{dia}", out DateOnly data);
+            if (!dataValida)
+                throw new DataInvalidaException();  
+
             return data;
         }
     }
